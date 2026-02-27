@@ -3,25 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amazon Log In</title>
+  
+  <title>RetroCart | Ashutosh Singh - Front-End Portfolio Project</title>
+  <meta name="description" content="A high-fidelity e-commerce simulation built with Vanilla JavaScript and Bootstrap. Part of Ashutosh Singh's (Retroashu) development portfolio.">
+  <meta name="keywords" content="Frontend Developer, Portfolio, JavaScript, Bootstrap, E-commerce Clone, Ashutosh Singh">
+  <meta name="author" content="Ashutosh Singh">
+  
+  <meta property="og:title" content="RetroCart | Portfolio Project">
+  <meta property="og:description" content="A fully responsive e-commerce clone featuring dynamic cart logic and form validation.">
+  <meta property="og:image" content="images/portfolio-preview.jpg">
+  <meta property="og:url" content="https://ashutoshsingh93541.github.io/Amazon-Clone_HTML-CSS-Javascript/">
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="style.css">
+  
+  <style>
+    .bg-amazon { background-color: #131921; }
+    .text-amazon-light { color: #CCCCCC; font-size: 0.75rem; }
+    .text-amazon-bold { color: #FFFFFF; font-size: 0.85rem; font-weight: bold; }
+    .search-btn { background-color: #febd69; border: none; }
+    .search-btn:hover { background-color: #f3a847; }
+    .nav-hover:hover { outline: 1px solid white; cursor: pointer; border-radius: 2px; }
+  </style>
 </head>
 <body class="bg-white">
-
+<div class="bg-danger text-white text-center py-2 px-3" style="font-size: 0.85rem; z-index: 9999; position: relative;">
+  <strong>⚠️ PORTFOLIO PROJECT:</strong> This is a simulated e-commerce site for <strong>Ashutosh Singh's</strong> portfolio. 
+  It is NOT the real Amazon. Please do <strong>NOT</strong> enter real passwords or personal data.
+</div>
   <div class="container d-flex flex-column align-items-center mt-4">
     
-    <a href="index.html" class="mb-4">
-      <img src="https://placehold.co/120x40/ffffff/000000?text=amazon.in" alt="Amazon Logo" width="115">
-    </a>
+    <div class="d-flex align-items-center">
+  <span class="fs-4 fw-bold text-white">Retro</span>
+  <span class="fs-4 fw-bold text-warning">Cart</span>
+  <span class="ms-2 badge bg-secondary" style="font-size: 0.6rem;">PROJECT</span>
+</div>
 
     <div class="card p-4 shadow-sm" style="width: 350px; border-radius: 8px; border-color: #ddd;">
-      <h2 class="fs-4 mb-3 fw-normal">Sign in</h2>
+      <h2 class="fs-4 mb-3 fw-normal">Project Login</h2>
       
       <form>
         <div class="mb-3">
           <label for="email" class="form-label fw-bold mb-1" style="font-size: 13px;">Email or mobile phone number</label>
+          <p class="text-muted" style="font-size: 11px;">(This is a simulation. Use any fake data to test validation logic.)</p>
           <input type="email" class="form-control" id="email" required>
         </div>
         
