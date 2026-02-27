@@ -3,12 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amazon Clone</title>
+  
+  <title>RetroCart | Ashutosh Singh - Front-End Portfolio Project</title>
+  <meta name="description" content="A high-fidelity e-commerce simulation built with Vanilla JavaScript and Bootstrap. Part of Ashutosh Singh's (Retroashu) development portfolio.">
+  <meta name="keywords" content="Frontend Developer, Portfolio, JavaScript, Bootstrap, E-commerce Clone, Ashutosh Singh">
+  <meta name="author" content="Ashutosh Singh">
+  
+  <meta property="og:title" content="RetroCart | Portfolio Project">
+  <meta property="og:description" content="A fully responsive e-commerce clone featuring dynamic cart logic and form validation.">
+  <meta property="og:image" content="images/portfolio-preview.jpg">
+  <meta property="og:url" content="https://ashutoshsingh93541.github.io/Amazon-Clone_HTML-CSS-Javascript/">
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="style.css">
+  
   <style>
-    /* A tiny bit of custom CSS for exact Amazon colors */
     .bg-amazon { background-color: #131921; }
     .text-amazon-light { color: #CCCCCC; font-size: 0.75rem; }
     .text-amazon-bold { color: #FFFFFF; font-size: 0.85rem; font-weight: bold; }
@@ -19,52 +29,40 @@
 </head>
 
 <body>
+  <div class="bg-danger text-white text-center py-2 px-3" style="font-size: 0.85rem; z-index: 9999; position: relative;">
+  <strong>⚠️ PORTFOLIO PROJECT:</strong> This is a simulated e-commerce site for <strong>Ashutosh Singh's</strong> portfolio. 
+  It is NOT the real Amazon. Please do <strong>NOT</strong> enter real passwords or personal data.
+</div>
 <!-- Main Navbar starts -->
   <header class="bg-amazon text-white py-2">
   <div class="container-fluid px-1 px-md-2">
     <div class="row align-items-center m-0 w-100 g-2">
       
       <div class="col-auto nav-hover">
-        <a href="index.html" class="text-decoration-none">
-          <img src="images/logo.png" alt="Amazon.in" width="90">
+        <a href="index.html" class="text-decoration-none d-flex align-items-center">
+          <span class="fs-4 fw-bold text-white">Retro</span>
+          <span class="fs-4 fw-bold text-warning">Cart</span>
+          <span class="ms-2 badge bg-secondary d-none d-lg-inline" style="font-size: 0.6rem;">PROJECT</span>
         </a>
-      </div>
-
-      <div class="col-auto nav-hover d-none d-md-flex align-items-center">
-        <i class="bi bi-geo-alt text-white fs-5 me-1"></i>
-        <div class="d-flex flex-column">
-          <span class="text-amazon-light lh-1">Deliver to Ashutosh</span>
-          <span class="text-amazon-bold lh-1">New Delhi 110075</span>
-        </div>
       </div>
 
       <div class="col-12 col-md order-last order-md-0">
         <div class="input-group">
-          <button class="btn btn-light dropdown-toggle border-end" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #f3f3f3; color: #333; font-size: 0.85rem;">All</button>
+          <button class="btn btn-light dropdown-toggle border-end" type="button" data-bs-toggle="dropdown" style="background-color: #f3f3f3; color: #333; font-size: 0.85rem;">All</button>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">All Categories</a></li>
           </ul>
-          <input type="text" class="form-control" placeholder="Search Amazon.in">
-          <button class="btn search-btn px-3" type="button">
+          <input type="text" class="form-control" placeholder="Search RetroCart.in">
+          <button class="btn search-btn px-3" aria-label="Search">
             <i class="bi bi-search text-dark"></i>
           </button>
         </div>
       </div>
 
-      <div class="col-auto nav-hover d-none d-md-flex align-items-end">
-        <span class="text-amazon-bold">🇮🇳 EN</span>
-        <i class="bi bi-caret-down-fill text-amazon-light ms-1" style="font-size: 0.6rem; margin-bottom: 4px;"></i>
-      </div>
-
       <a href="signin.html" class="col-auto nav-hover d-flex flex-column ms-auto ms-md-0 text-decoration-none">
-    <span class="text-amazon-light lh-1 d-none d-md-block text-white">Hello, sign in</span>
-    <span class="text-amazon-bold lh-1 text-white">Account <span class="d-none d-md-inline">& Lists</span> <i class="bi bi-caret-down-fill text-amazon-light d-none d-md-inline" style="font-size: 0.6rem;"></i></span>
-  </a>
-
-      <div class="col-auto nav-hover d-none d-md-flex flex-column">
-        <span class="text-amazon-light lh-1">Returns</span>
-        <span class="text-amazon-bold lh-1">& Orders</span>
-      </div>
+        <span class="text-amazon-light lh-1 d-none d-md-block text-white">Hello, Guest</span>
+        <span class="text-amazon-bold lh-1 text-white">Account <span class="d-none d-md-inline">& Lists</span> <i class="bi bi-caret-down-fill text-amazon-light d-none d-md-inline" style="font-size: 0.6rem;"></i></span>
+      </a>
 
       <a href="cart.html" class="col-auto nav-hover d-flex align-items-end position-relative pe-2 text-decoration-none">
         <i class="bi bi-cart3 fs-3 text-white"></i>
@@ -75,30 +73,17 @@
     </div>
   </div>
 </header>
-<!-- Main navbar ends -->
 
-<!-- Secondary navbar starts -->
 <nav class="bg-amazon-sub d-flex align-items-center px-2 py-1 flex-nowrap" style="overflow-x: auto;">
-  
-  <a href="#" class="sub-nav-link d-flex align-items-center fw-bold">
-    <i class="bi bi-list fs-5 me-1"></i> All
-  </a>
-
-  <a href="#" class="rufus-btn rounded-pill mx-1 d-flex align-items-center">
-    <i class="bi bi-stars text-primary me-1"></i> Rufus
-  </a>
-
-  <a href="#" class="sub-nav-link d-flex align-items-center">Fresh <i class="bi bi-caret-down-fill ms-1" style="font-size: 0.6rem;"></i></a>
+  <a href="#" class="sub-nav-link d-flex align-items-center fw-bold"><i class="bi bi-list fs-5 me-1"></i> All</a>
+  <a href="#" class="rufus-btn rounded-pill mx-1 d-flex align-items-center"><i class="bi bi-stars text-primary me-1"></i> Rufus</a>
   <a href="#" class="sub-nav-link">New Releases</a>
   <a href="#" class="sub-nav-link">Today's Deals</a>
-  <a href="#" class="sub-nav-link">Keep Shopping for</a>
-  <a href="#" class="sub-nav-link">Amazon Pay</a>
-  <a href="#" class="sub-nav-link">MX Player</a>
+  <a href="#" class="sub-nav-link">Customer Service</a>
+  <a href="#" class="sub-nav-link">Best Sellers</a>
+  <a href="#" class="sub-nav-link">Electronics</a>
+  <a href="#" class="sub-nav-link">Fashion</a>
   <a href="#" class="sub-nav-link">Sell</a>
-  <a href="#" class="sub-nav-link">Gift Cards</a>
-  <a href="#" class="sub-nav-link d-flex align-items-center">Prime <i class="bi bi-caret-down-fill ms-1" style="font-size: 0.6rem;"></i></a>
-  <a href="#" class="sub-nav-link">Buy Again</a>
-  <a href="#" class="sub-nav-link d-flex align-items-center">Amazon Business <i class="bi bi-caret-down-fill ms-1" style="font-size: 0.6rem;"></i></a>
   <a href="#" class="sub-nav-link">Gift Ideas</a>
 </nav>
 <!-- Secondary Navbar ends -->
@@ -192,8 +177,7 @@
   <button type="button" class="btn btn-dark py-3 btn-block rounded-0" onclick="window.scrollTo(0, 0);">Back to top</button>
 </div>
 
-<!-- Footer starts -->
- <footer class="bg-amazon-sub pt-5 pb-4">
+<footer class="bg-amazon-sub pt-5 pb-4">
   <div class="container w-75"> 
     
     <div class="row">
@@ -201,10 +185,10 @@
       <div class="col-md-3 col-sm-6 mb-4">
         <div class="footer-heading">Get to Know Us</div>
         <ul class="list-unstyled">
-          <li><a href="#" class="footer-link">About Amazon</a></li>
+          <li><a href="#" class="footer-link">About RetroCart</a></li>
           <li><a href="#" class="footer-link">Careers</a></li>
           <li><a href="#" class="footer-link">Press Releases</a></li>
-          <li><a href="#" class="footer-link">Amazon Science</a></li>
+          <li><a href="#" class="footer-link">Science & Innovation</a></li>
         </ul>
       </div>
 
@@ -220,15 +204,14 @@
       <div class="col-md-3 col-sm-6 mb-4">
         <div class="footer-heading">Make Money with Us</div>
         <ul class="list-unstyled">
-          <li><a href="#" class="footer-link">Sell on Amazon</a></li>
-          <li><a href="#" class="footer-link">Sell under Amazon Accelerator</a></li>
+          <li><a href="#" class="footer-link">Sell on RetroCart</a></li>
+          <li><a href="#" class="footer-link">Supply to RetroCart</a></li>
           <li><a href="#" class="footer-link">Protect and Build Your Brand</a></li>
-          <li><a href="#" class="footer-link">Amazon Global Selling</a></li>
-          <li><a href="#" class="footer-link">Supply to Amazon</a></li>
+          <li><a href="#" class="footer-link">Global Selling</a></li>
           <li><a href="#" class="footer-link">Become an Affiliate</a></li>
-          <li><a href="#" class="footer-link">Fulfilment by Amazon</a></li>
+          <li><a href="#" class="footer-link">Fulfilment by RetroCart</a></li>
           <li><a href="#" class="footer-link">Advertise Your Products</a></li>
-          <li><a href="#" class="footer-link">Amazon Pay on Merchants</a></li>
+          <li><a href="#" class="footer-link">Merchant Pay Services</a></li>
         </ul>
       </div>
 
@@ -237,9 +220,9 @@
         <ul class="list-unstyled">
           <li><a href="#" class="footer-link">Your Account</a></li>
           <li><a href="#" class="footer-link">Returns Centre</a></li>
-          <li><a href="#" class="footer-link">Recalls and Product Safety Alerts</a></li>
+          <li><a href="#" class="footer-link">Product Safety Alerts</a></li>
           <li><a href="#" class="footer-link">100% Purchase Protection</a></li>
-          <li><a href="#" class="footer-link">Amazon App Download</a></li>
+          <li><a href="#" class="footer-link">App Download</a></li>
           <li><a href="#" class="footer-link">Help</a></li>
         </ul>
       </div>
@@ -250,8 +233,9 @@
 
     <div class="d-flex justify-content-center align-items-center gap-4">
       
-      <a href="index.html" class="mt-1">
-        <img src="images/transparent-logo.png" alt="Amazon" width="100">
+      <a href="index.html" class="text-decoration-none d-flex align-items-center">
+        <span class="fs-4 fw-bold text-white">Retro</span>
+        <span class="fs-4 fw-bold text-warning">Cart</span>
       </a>
       
       <button class="footer-btn">
@@ -264,10 +248,7 @@
     </div>
   </div>
 </footer>
-<!-- Footer Ends -->
-
- <!-- Secondary Footer Starts -->
-  <div class="bg-amazon pt-5 pb-4">
+<div class="bg-amazon pt-5 pb-4">
   <div class="container w-75">
     
     <div class="row mb-5">
@@ -285,11 +266,11 @@
 
       <div class="col-md-3 col-sm-6">
         <a href="#" class="footer-bottom-item">
-          <span class="footer-bottom-title">Amazon Web Services</span>
-          <span class="footer-bottom-desc">Scalable Cloud<br>Computing Services</span>
+          <span class="footer-bottom-title">Cloud Services</span>
+          <span class="footer-bottom-desc">Scalable Computing<br>Services</span>
         </a>
         <a href="#" class="footer-bottom-item">
-          <span class="footer-bottom-title">Amazon Business</span>
+          <span class="footer-bottom-title">Business Solutions</span>
           <span class="footer-bottom-desc">Everything For<br>Your Business</span>
         </a>
       </div>
@@ -300,7 +281,7 @@
           <span class="footer-bottom-desc">Download<br>Audio Books</span>
         </a>
         <a href="#" class="footer-bottom-item">
-          <span class="footer-bottom-title">Amazon Prime Music</span>
+          <span class="footer-bottom-title">Streaming Music</span>
           <span class="footer-bottom-desc">100 million songs, ad-free<br>Over 15 million podcast episodes</span>
         </a>
       </div>
