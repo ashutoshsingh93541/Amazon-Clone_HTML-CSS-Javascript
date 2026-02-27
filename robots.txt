@@ -1,0 +1,15 @@
+# General instructions for all search engines
+User-agent: *
+
+# Allow crawling of the main pages
+Allow: /index.html
+Allow: /product.html
+Allow: /cart.html
+
+# Disallow indexing of the simulated login pages 
+# This helps prevent bots from thinking it's a real phishing site
+Disallow: /signin.html
+Disallow: /login.html
+
+# Point to your sitemap (if you decide to create one later)
+Sitemap: https://ashutoshsingh93541.github.io/Amazon-Clone_HTML-CSS-Javascript/sitemap.xml
