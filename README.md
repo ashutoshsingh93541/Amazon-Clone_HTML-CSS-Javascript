@@ -6,7 +6,7 @@ Built using **Vanilla JavaScript**, **Bootstrap 5**, and **HTML/CSS**, this proj
 ---
 
 ## 🚀 Live Demo  
-👉 https://your-github-username.github.io/your-repo-name/
+👉 (https://ashutoshsingh93541.github.io/Amazon-Clone_HTML-CSS-Javascript/)
 
 (Replace with your actual GitHub Pages link)
 
