@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amazon Clone</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* A tiny bit of custom CSS for exact Amazon colors */
+    .bg-amazon { background-color: #131921; }
+    .text-amazon-light { color: #CCCCCC; font-size: 0.75rem; }
+    .text-amazon-bold { color: #FFFFFF; font-size: 0.85rem; font-weight: bold; }
+    .search-btn { background-color: #febd69; border: none; }
+    .search-btn:hover { background-color: #f3a847; }
+    .nav-hover:hover { outline: 1px solid white; cursor: pointer; border-radius: 2px; }
+  </style>
+</head>
+
+<body>
+<!-- Main Navbar starts -->
+  <header class="bg-amazon text-white py-2">
+  <div class="container-fluid px-1 px-md-2">
+    <div class="row align-items-center m-0 w-100 g-2">
+      
+      <div class="col-auto nav-hover">
+        <a href="index.html" class="text-decoration-none">
+          <img src="images/logo.png" alt="Amazon.in" width="90">
+        </a>
+      </div>
+
+      <div class="col-auto nav-hover d-none d-md-flex align-items-center">
+        <i class="bi bi-geo-alt text-white fs-5 me-1"></i>
+        <div class="d-flex flex-column">
+          <span class="text-amazon-light lh-1">Deliver to Ashutosh</span>
+          <span class="text-amazon-bold lh-1">New Delhi 110075</span>
+        </div>
+      </div>
+
+      <div class="col-12 col-md order-last order-md-0">
+        <div class="input-group">
+          <button class="btn btn-light dropdown-toggle border-end" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #f3f3f3; color: #333; font-size: 0.85rem;">All</button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">All Categories</a></li>
+          </ul>
+          <input type="text" class="form-control" placeholder="Search Amazon.in">
+          <button class="btn search-btn px-3" type="button">
+            <i class="bi bi-search text-dark"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="col-auto nav-hover d-none d-md-flex align-items-end">
+        <span class="text-amazon-bold">🇮🇳 EN</span>
+        <i class="bi bi-caret-down-fill text-amazon-light ms-1" style="font-size: 0.6rem; margin-bottom: 4px;"></i>
+      </div>
+
+      <a href="signin.html" class="col-auto nav-hover d-flex flex-column ms-auto ms-md-0 text-decoration-none">
+    <span class="text-amazon-light lh-1 d-none d-md-block text-white">Hello, sign in</span>
+    <span class="text-amazon-bold lh-1 text-white">Account <span class="d-none d-md-inline">& Lists</span> <i class="bi bi-caret-down-fill text-amazon-light d-none d-md-inline" style="font-size: 0.6rem;"></i></span>
+  </a>
+
+      <div class="col-auto nav-hover d-none d-md-flex flex-column">
+        <span class="text-amazon-light lh-1">Returns</span>
+        <span class="text-amazon-bold lh-1">& Orders</span>
+      </div>
+
+      <a href="cart.html" class="col-auto nav-hover d-flex align-items-end position-relative pe-2 text-decoration-none">
+        <i class="bi bi-cart3 fs-3 text-white"></i>
+        <span id="cart-count" class="position-absolute translate-middle text-warning fw-bold" style="top: 10px; left: 20px; font-size: 0.9rem;">0</span>
+        <span class="text-amazon-bold ms-1 mb-1 d-none d-md-inline text-white">Cart</span>
+      </a>
+
+    </div>
+  </div>
+</header>
+<!-- Main navbar ends -->
+
+<!-- Secondary navbar starts -->
+<nav class="bg-amazon-sub d-flex align-items-center px-2 py-1 flex-nowrap" style="overflow-x: auto;">
+  
+  <a href="#" class="sub-nav-link d-flex align-items-center fw-bold">
+    <i class="bi bi-list fs-5 me-1"></i> All
+  </a>
+
+  <a href="#" class="rufus-btn rounded-pill mx-1 d-flex align-items-center">
+    <i class="bi bi-stars text-primary me-1"></i> Rufus
+  </a>
+
+  <a href="#" class="sub-nav-link d-flex align-items-center">Fresh <i class="bi bi-caret-down-fill ms-1" style="font-size: 0.6rem;"></i></a>
+  <a href="#" class="sub-nav-link">New Releases</a>
+  <a href="#" class="sub-nav-link">Today's Deals</a>
+  <a href="#" class="sub-nav-link">Keep Shopping for</a>
+  <a href="#" class="sub-nav-link">Amazon Pay</a>
+  <a href="#" class="sub-nav-link">MX Player</a>
+  <a href="#" class="sub-nav-link">Sell</a>
+  <a href="#" class="sub-nav-link">Gift Cards</a>
+  <a href="#" class="sub-nav-link d-flex align-items-center">Prime <i class="bi bi-caret-down-fill ms-1" style="font-size: 0.6rem;"></i></a>
+  <a href="#" class="sub-nav-link">Buy Again</a>
+  <a href="#" class="sub-nav-link d-flex align-items-center">Amazon Business <i class="bi bi-caret-down-fill ms-1" style="font-size: 0.6rem;"></i></a>
+  <a href="#" class="sub-nav-link">Gift Ideas</a>
+</nav>
+<!-- Secondary Navbar ends -->
+<div class="container-fluid px-4 py-4 bg-white">
+  
+  <nav aria-label="breadcrumb" style="font-size: 0.85rem;">
+    <ol class="breadcrumb mb-2">
+      <li class="breadcrumb-item"><a href="#" class="text-muted text-decoration-none">Electronics</a></li>
+      <li class="breadcrumb-item"><a href="#" class="text-muted text-decoration-none">Computers & Accessories</a></li>
+      <li class="breadcrumb-item"><a href="#" class="text-muted text-decoration-none">Components</a></li>
+      <li class="breadcrumb-item active text-dark fw-bold" aria-current="page">Graphics Cards</li>
+    </ol>
+  </nav>
+
+  <div class="row g-4 mt-2">
+    
+    <div class="col-lg-4 col-md-5 d-flex">
+      <div class="d-flex flex-column gap-2 me-3">
+        <img src="https://placehold.co/60x60?text=1" class="border rounded p-1 thumbnail-hover cursor-pointer" alt="Thumb 1">
+        <img src="https://placehold.co/60x60?text=2" class="border rounded p-1 thumbnail-hover cursor-pointer" alt="Thumb 2">
+        <img src="https://placehold.co/60x60?text=3" class="border rounded p-1 thumbnail-hover cursor-pointer" alt="Thumb 3">
+      </div>
+      <div class="flex-grow-1 text-center">
+        <img src="images/5050.jfif" class="img-fluid" id="main-product-image" alt="RTX 5050">
+      </div>
+    </div>
+
+    <div class="col-lg-5 col-md-7 pe-lg-5">
+      <h1 class="fw-normal mb-1" style="font-size: 1.5rem; line-height: 1.3;">Nvidia RTX 5050 Graphics Card - 8GB GDDR6, Ray Tracing, DLSS 3, Dual Fan Cooling</h1>
+      <a href="#" class="text-decoration-none" style="color: #007185; font-size: 0.9rem;">Visit the NVIDIA Store</a>
+      
+      <div class="d-flex align-items-center gap-2 mt-2 mb-2">
+        <span class="text-warning fs-5">⭐⭐⭐⭐½</span>
+        <i class="bi bi-chevron-down text-muted" style="font-size: 0.7rem;"></i>
+        <a href="#" class="text-decoration-none" style="color: #007185; font-size: 0.9rem;">4,281 ratings</a>
+      </div>
+      
+      <hr>
+      
+      <div class="mb-3">
+        <span class="text-danger" style="font-size: 1.5rem;">-12%</span>
+        <span class="fs-3 fw-bold ms-2">₹28,999</span>
+        <div class="text-muted" style="font-size: 0.85rem;">M.R.P.: <span class="text-decoration-line-through">₹32,999</span></div>
+        <div style="font-size: 0.85rem;">Inclusive of all taxes</div>
+      </div>
+
+      <hr>
+
+      <h5 class="fw-bold" style="font-size: 1rem;">About this item</h5>
+      <ul class="product-bullets" style="font-size: 0.9rem; line-height: 1.6;">
+        <li><strong>Next-Gen Performance:</strong> Powered by the ultra-efficient Ada Lovelace architecture.</li>
+        <li><strong>8GB GDDR6 Memory:</strong> Ample VRAM for high-texture gaming at 1080p and 1440p resolutions.</li>
+        <li><strong>DLSS 3 AI Upscaling:</strong> Multiply your framerates in supported games with AI-generated frames.</li>
+        <li><strong>Dual Fan Design:</strong> Keeps the card cool and quiet even under heavy gaming loads.</li>
+      </ul>
+    </div>
+
+    <div class="col-lg-3 col-md-12 mt-4 mt-lg-0">
+      <div class="border rounded p-3 shadow-sm buy-box">
+        <h4 class="fw-bold mb-2">₹28,999.00</h4>
+        
+        <div class="mb-3" style="font-size: 0.9rem;">
+          <a href="#" class="text-decoration-none" style="color: #007185;">FREE delivery</a> <strong>Wednesday, 4 March.</strong> Order within <span class="text-success">21 hrs 30 mins.</span>
+        </div>
+        
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <i class="bi bi-geo-alt"></i>
+          <a href="#" class="text-decoration-none" style="color: #007185; font-size: 0.85rem;">Deliver to Ashutosh - New Delhi 110075</a>
+        </div>
+        
+        <h5 class="text-success mb-3 fs-5">In stock</h5>
+        
+        <select class="form-select form-select-sm shadow-sm mb-3 w-50" style="border-radius: 8px;">
+          <option value="1" selected>Quantity: 1</option>
+          <option value="2">2</option>
+        </select>
+        
+        <button id="pdp-add-to-cart" class="btn btn-warning w-100 shadow-sm rounded-pill py-2 mb-2">Add to Cart</button>
+        <button class="btn btn-amazon-orange w-100 shadow-sm rounded-pill py-2 mb-3">Buy Now</button>
+        
+        <div class="d-flex align-items-center gap-2 text-muted" style="font-size: 0.85rem;">
+          <i class="bi bi-lock"></i> Secure transaction
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+ <div class="d-grid">
+  <button type="button" class="btn btn-dark py-3 btn-block rounded-0" onclick="window.scrollTo(0, 0);">Back to top</button>
+</div>
+
+<!-- Footer starts -->
+ <footer class="bg-amazon-sub pt-5 pb-4">
+  <div class="container w-75"> 
+    
+    <div class="row">
+      
+      <div class="col-md-3 col-sm-6 mb-4">
+        <div class="footer-heading">Get to Know Us</div>
+        <ul class="list-unstyled">
+          <li><a href="#" class="footer-link">About Amazon</a></li>
+          <li><a href="#" class="footer-link">Careers</a></li>
+          <li><a href="#" class="footer-link">Press Releases</a></li>
+          <li><a href="#" class="footer-link">Amazon Science</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-3 col-sm-6 mb-4">
+        <div class="footer-heading">Connect with Us</div>
+        <ul class="list-unstyled">
+          <li><a href="#" class="footer-link">Facebook</a></li>
+          <li><a href="#" class="footer-link">Twitter</a></li>
+          <li><a href="#" class="footer-link">Instagram</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-3 col-sm-6 mb-4">
+        <div class="footer-heading">Make Money with Us</div>
+        <ul class="list-unstyled">
+          <li><a href="#" class="footer-link">Sell on Amazon</a></li>
+          <li><a href="#" class="footer-link">Sell under Amazon Accelerator</a></li>
+          <li><a href="#" class="footer-link">Protect and Build Your Brand</a></li>
+          <li><a href="#" class="footer-link">Amazon Global Selling</a></li>
+          <li><a href="#" class="footer-link">Supply to Amazon</a></li>
+          <li><a href="#" class="footer-link">Become an Affiliate</a></li>
+          <li><a href="#" class="footer-link">Fulfilment by Amazon</a></li>
+          <li><a href="#" class="footer-link">Advertise Your Products</a></li>
+          <li><a href="#" class="footer-link">Amazon Pay on Merchants</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-3 col-sm-6 mb-4">
+        <div class="footer-heading">Let Us Help You</div>
+        <ul class="list-unstyled">
+          <li><a href="#" class="footer-link">Your Account</a></li>
+          <li><a href="#" class="footer-link">Returns Centre</a></li>
+          <li><a href="#" class="footer-link">Recalls and Product Safety Alerts</a></li>
+          <li><a href="#" class="footer-link">100% Purchase Protection</a></li>
+          <li><a href="#" class="footer-link">Amazon App Download</a></li>
+          <li><a href="#" class="footer-link">Help</a></li>
+        </ul>
+      </div>
+      
+    </div>
+
+    <div class="footer-line"></div>
+
+    <div class="d-flex justify-content-center align-items-center gap-4">
+      
+      <a href="index.html" class="mt-1">
+        <img src="images/transparent-logo.png" alt="Amazon" width="100">
+      </a>
+      
+      <button class="footer-btn">
+        <i class="bi bi-globe"></i> English <i class="bi bi-chevron-expand" style="font-size: 0.7rem;"></i>
+      </button>
+      
+      <button class="footer-btn">
+         🇮🇳 India
+      </button> 
+    </div>
+  </div>
+</footer>
+<!-- Footer Ends -->
+
+ <!-- Secondary Footer Starts -->
+  <div class="bg-amazon pt-5 pb-4">
+  <div class="container w-75">
+    
+    <div class="row mb-5">
+      
+      <div class="col-md-3 col-sm-6">
+        <a href="#" class="footer-bottom-item">
+          <span class="footer-bottom-title">AbeBooks</span>
+          <span class="footer-bottom-desc">Books, art<br>& collectibles</span>
+        </a>
+        <a href="#" class="footer-bottom-item">
+          <span class="footer-bottom-title">Shopbop</span>
+          <span class="footer-bottom-desc">Designer<br>Fashion Brands</span>
+        </a>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <a href="#" class="footer-bottom-item">
+          <span class="footer-bottom-title">Amazon Web Services</span>
+          <span class="footer-bottom-desc">Scalable Cloud<br>Computing Services</span>
+        </a>
+        <a href="#" class="footer-bottom-item">
+          <span class="footer-bottom-title">Amazon Business</span>
+          <span class="footer-bottom-desc">Everything For<br>Your Business</span>
+        </a>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <a href="#" class="footer-bottom-item">
+          <span class="footer-bottom-title">Audible</span>
+          <span class="footer-bottom-desc">Download<br>Audio Books</span>
+        </a>
+        <a href="#" class="footer-bottom-item">
+          <span class="footer-bottom-title">Amazon Prime Music</span>
+          <span class="footer-bottom-desc">100 million songs, ad-free<br>Over 15 million podcast episodes</span>
+        </a>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <a href="#" class="footer-bottom-item">
+          <span class="footer-bottom-title">IMDb</span>
+          <span class="footer-bottom-desc">Movies, TV<br>& Celebrities</span>
+        </a>
+      </div>
+
+    </div>
+
+    <div class="d-flex flex-column align-items-center mt-4">
+      <div class="mb-1">
+        <a href="#" class="copyright-link me-3">Conditions of Use & Sale</a>
+        <a href="#" class="copyright-link me-3">Privacy Notice</a>
+        <a href="#" class="copyright-link">Interest-Based Ads</a>
+      </div>
+      <span class="copyright-text">© 2026, Retroashu.com, Created with &hearts;</span>
+    </div>
+
+  </div>
+</div>
+  <!-- Secondary Footer Ends -->
+   <script>
+  // 1. Define the product data for this specific page
+  const currentProduct = {
+    id: 2, // Matches the ID we used on the homepage!
+    title: "Nvidia RTX 5050 Graphics Card - 8GB GDDR6",
+    image: "https://placehold.co/200x200?text=Nvidia+RTX+5050",
+    price: "₹28,999",
+    delivery: "FREE delivery Wednesday, 4 March"
+  };
+
+  // 2. Listen for the Add to Cart click
+  document.getElementById('pdp-add-to-cart').addEventListener('click', function() {
+    
+    // Get the existing cart from Local Storage
+    let cart = JSON.parse(localStorage.getItem('amazonCart')) || [];
+    
+    // Check if the GPU is already in the cart
+    const existingItem = cart.find(item => item.id === currentProduct.id);
+    
+    if (existingItem) {
+      existingItem.quantity += 1;
+    } else {
+      cart.push({ ...currentProduct, quantity: 1 });
+    }
+    
+    // Save it back to Local Storage
+    localStorage.setItem('amazonCart', JSON.stringify(cart));
+    
+    // Visual Feedback
+    const btn = this;
+    const originalText = btn.innerText;
+    btn.innerText = "Added to Cart!";
+    btn.classList.replace('btn-warning', 'btn-success');
+    
+    // Update the navbar cart count instantly
+    const cartBadge = document.getElementById('cart-count');
+    if (cartBadge) {
+      const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+      cartBadge.innerText = totalItems;
+    }
+    
+    setTimeout(() => {
+      btn.innerText = originalText;
+      btn.classList.replace('btn-success', 'btn-warning');
+    }, 2000);
+  });
+
+  // 3. Update navbar count on page load
+  window.addEventListener('DOMContentLoaded', () => {
+    let cart = JSON.parse(localStorage.getItem('amazonCart')) || [];
+    const cartBadge = document.getElementById('cart-count');
+    if (cartBadge) {
+      const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+      cartBadge.innerText = totalItems;
+    }
+  });
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amazon Clone</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* A tiny bit of custom CSS for exact Amazon colors */
+    .bg-amazon { background-color: #131921; }
+    .text-amazon-light { color: #CCCCCC; font-size: 0.75rem; }
+    .text-amazon-bold { color: #FFFFFF; font-size: 0.85rem; font-weight: bold; }
+    .search-btn { background-color: #febd69; border: none; }
+    .search-btn:hover { background-color: #f3a847; }
+    .nav-hover:hover { outline: 1px solid white; cursor: pointer; border-radius: 2px; }
+  </style>
+</head>
+<body>
+  <!-- Main Navbar starts -->
+  <header class="bg-amazon text-white py-2">
+  <div class="container-fluid px-1 px-md-2">
+    <div class="row align-items-center m-0 w-100 g-2">
+      
+      <div class="col-auto nav-hover">
+        <a href="index.html" class="text-decoration-none">
+          <img src="images/logo.png" alt="Amazon.in" width="90">
+        </a>
+      </div>
+
+      <div class="col-auto nav-hover d-none d-md-flex align-items-center">
+        <i class="bi bi-geo-alt text-white fs-5 me-1"></i>
+        <div class="d-flex flex-column">
+          <span class="text-amazon-light lh-1">Deliver to Ashutosh</span>
+          <span class="text-amazon-bold lh-1">New Delhi 110075</span>
+        </div>
+      </div>
+
+      <div class="col-12 col-md order-last order-md-0">
+        <div class="input-group">
+          <button class="btn btn-light dropdown-toggle border-end" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #f3f3f3; color: #333; font-size: 0.85rem;">All</button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">All Categories</a></li>
+          </ul>
+          <input type="text" class="form-control" placeholder="Search Amazon.in">
+          <button class="btn search-btn px-3" type="button">
+            <i class="bi bi-search text-dark"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="col-auto nav-hover d-none d-md-flex align-items-end">
+        <span class="text-amazon-bold">🇮🇳 EN</span>
+        <i class="bi bi-caret-down-fill text-amazon-light ms-1" style="font-size: 0.6rem; margin-bottom: 4px;"></i>
+      </div>
+
+      <a href="signin.html" class="col-auto nav-hover d-flex flex-column ms-auto ms-md-0 text-decoration-none">
+    <span class="text-amazon-light lh-1 d-none d-md-block text-white">Hello, sign in</span>
+    <span class="text-amazon-bold lh-1 text-white">Account <span class="d-none d-md-inline">& Lists</span> <i class="bi bi-caret-down-fill text-amazon-light d-none d-md-inline" style="font-size: 0.6rem;"></i></span>
+  </a>
+
+      <div class="col-auto nav-hover d-none d-md-flex flex-column">
+        <span class="text-amazon-light lh-1">Returns</span>
+        <span class="text-amazon-bold lh-1">& Orders</span>
+      </div>
+
+      <a href="cart.html" class="col-auto nav-hover d-flex align-items-end position-relative pe-2 text-decoration-none">
+        <i class="bi bi-cart3 fs-3 text-white"></i>
+        <span id="cart-count" class="position-absolute translate-middle text-warning fw-bold" style="top: 10px; left: 20px; font-size: 0.9rem;">0</span>
+        <span class="text-amazon-bold ms-1 mb-1 d-none d-md-inline text-white">Cart</span>
+      </a>
+
+    </div>
+  </div>
+</header>
+<!-- Main navbar ends -->
+
+<!-- Secondary navbar starts -->
+<nav class="bg-amazon-sub d-flex align-items-center px-2 py-1 flex-nowrap" style="overflow-x: auto;">
+  
+  <a href="#" class="sub-nav-link d-flex align-items-center fw-bold">
+    <i class="bi bi-list fs-5 me-1"></i> All
+  </a>
+
+  <a href="#" class="rufus-btn rounded-pill mx-1 d-flex align-items-center">
+    <i class="bi bi-stars text-primary me-1"></i> Rufus
+  </a>
+
+  <a href="#" class="sub-nav-link d-flex align-items-center">Fresh <i class="bi bi-caret-down-fill ms-1" style="font-size: 0.6rem;"></i></a>
+  <a href="#" class="sub-nav-link">New Releases</a>
+  <a href="#" class="sub-nav-link">Today's Deals</a>
+  <a href="#" class="sub-nav-link">Keep Shopping for</a>
+  <a href="#" class="sub-nav-link">Amazon Pay</a>
+  <a href="#" class="sub-nav-link">MX Player</a>
+  <a href="#" class="sub-nav-link">Sell</a>
+  <a href="#" class="sub-nav-link">Gift Cards</a>
+  <a href="#" class="sub-nav-link d-flex align-items-center">Prime <i class="bi bi-caret-down-fill ms-1" style="font-size: 0.6rem;"></i></a>
+  <a href="#" class="sub-nav-link">Buy Again</a>
+  <a href="#" class="sub-nav-link d-flex align-items-center">Amazon Business <i class="bi bi-caret-down-fill ms-1" style="font-size: 0.6rem;"></i></a>
+  <a href="#" class="sub-nav-link">Gift Ideas</a>
+</nav>
+<!-- Secondary Navbar ends -->
+
+<!-- Main Carousel Starts -->
+ <div class="hero-carousel-container">
+  <div id="amazonHeroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+    <div class="carousel-inner">
+      
+      <div class="carousel-item active hero-carousel-item">
+        <img src="images/banner-2.jpg" class="d-block hero-carousel-img" alt="Prime Shopping Days">
+      </div>
+      
+      <div class="carousel-item hero-carousel-item">
+        <img src="images/banner-3.jpg" class="d-block hero-carousel-img" alt="Smart Wearables Sale">
+      </div>
+      
+      <div class="carousel-item hero-carousel-item">
+        <img src="images/banner-5.jpg" class="d-block hero-carousel-img" alt="Great Indian Festival">
+      </div>
+
+      <div class="carousel-item hero-carousel-item">
+        <img src="images/banner-4.jpg" class="d-block hero-carousel-img" alt="Great Indian Festival">
+      </div>
+
+    </div>
+
+    <button class="carousel-control-prev hero-carousel-control hero-carousel-control-prev" type="button" data-bs-target="#amazonHeroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next hero-carousel-control hero-carousel-control-next" type="button" data-bs-target="#amazonHeroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+ <!-- Main Carousel Ends -->
+
+ <!-- Product List Starts -->
+  <div class="container-fluid product-cards-overlay px-4">
+  <div class="row g-3"> <div class="col-lg-3 col-md-6">
+      <div class="bg-white p-3 product-card">
+        <h5 class="fw-bold mb-3">Pick up where you left off</h5>
+        
+        <div class="row row-cols-2 g-3">
+          <div class="col">
+            <a href="#" class="text-decoration-none">
+              <img src="images/table.jpg" class="img-fluid mb-1" alt="Product">
+              <span class="product-text">Riyan Luxiwood® Je...</span>
+            </a>
+          </div>
+          <div class="col">
+            <a href="#" class="text-decoration-none">
+              <img src="images/table-3.jpg" class="img-fluid mb-1" alt="Product">
+              <span class="product-text">Table top for Centre...</span>
+            </a>
+          </div>
+          <div class="col">
+            <a href="#" class="text-decoration-none">
+              <img src="images/table-2.jpg" class="img-fluid mb-1" alt="Product">
+              <span class="product-text">Riyan Luxiwood® Co...</span>
+            </a>
+          </div>
+          <div class="col">
+            <a href="#" class="text-decoration-none">
+              <img src="images/television.jpg" class="img-fluid mb-1" alt="Product">
+              <span class="product-text">DESKIZIA Executive...</span>
+            </a>
+          </div>
+        </div>
+        
+        <a href="#" class="card-link">See more</a>
+      </div>
+    </div>
+
+
+    <div class="col-lg-3 col-md-6">
+      <div class="bg-white p-3 product-card">
+        <h5 class="fw-bold mb-3">Keep shopping for</h5>
+        
+        <div class="row row-cols-2 g-3">
+          <div class="col">
+            <a href="#" class="text-decoration-none">
+              <img src="images/jewellery.jpg" class="img-fluid mb-1" alt="Product">
+              <span class="product-text">Jewellery boxes</span>
+            </a>
+          </div>
+          <div class="col">
+            <a href="#" class="text-decoration-none">
+              <img src="images/mobile.jpg" class="img-fluid mb-1" alt="Product">
+              <span class="product-text">Smartphones & b...</span>
+            </a>
+          </div>
+          <div class="col">
+            <a href="#" class="text-decoration-none">
+              <img src="images/gopro.jpg" class="img-fluid mb-1" alt="Product">
+              <span class="product-text">Audio & video re...</span>
+            </a>
+          </div>
+          <div class="col">
+            <a href="#" class="text-decoration-none">
+              <img src="images/jewellery-2.jpg" class="img-fluid mb-1" alt="Product">
+              <span class="product-text">Cake boxes</span>
+            </a>
+          </div>
+        </div>
+        
+        <a href="#" class="card-link">View your browsing history</a>
+      </div>
+    </div>
+
+
+    <div class="col-lg-3 col-md-6">
+      <div class="bg-white p-3 product-card">
+        <h5 class="fw-bold mb-3">Continue shopping deals</h5>
+        
+        <div class="row row-cols-2 g-3">
+          <div class="col">
+            <a href="#" class="text-decoration-none">
+              <img src="images/lights.jpg" class="img-fluid mb-1" alt="Product">
+            </a>
+          </div>
+          <div class="col">
+            <a href="#" class="text-decoration-none">
+              <img src="images/sandals.jpg" class="img-fluid mb-1" alt="Product">
+            </a>
+          </div>
+          <div class="col">
+            <a href="#" class="text-decoration-none">
+              <img src="images/shoes.jpg" class="img-fluid mb-1" alt="Product">
+            </a>
+          </div>
+          <div class="col">
+            <a href="#" class="text-decoration-none">
+              <img src="images/pad.jpg" class="img-fluid mb-1" alt="Product">
+            </a>
+          </div>
+        </div>
+        
+        <a href="#" class="card-link">See more deals</a>
+      </div>
+    </div>
+
+
+    <div class="col-lg-3 col-md-6">
+      <div class="bg-white h-100 d-flex flex-column">
+        <div class="p-3">
+            <h5 class="fw-bold">Get wholesale prices on 15 Cr + products</h5>
+            <a href="#" class="card-link d-block mb-2">Register now</a>
+        </div>
+        <div class="flex-grow-1 overflow-hidden">
+            <img src="images/ads.jpg" class="w-100 h-100 object-fit-cover" alt="Ad">
+        </div>
+      </div>
+    </div>
+  </div> 
+</div>
+  <!-- Product List Ends -->
+
+  <div class="container-fluid px-4 mb-4">
+  <div class="deals-container">
+    
+    <div class="d-flex align-items-baseline mb-3">
+      <h4 class="fw-bold mb-0 me-3">Today's Deals</h4>
+      <a href="#" class="text-decoration-none card-link" style="margin-top: 0; padding-top: 0;">See all deals</a>
+    </div>
+    
+    <div class="deals-scroll-row">
+      
+      <div class="deal-card">
+        <div class="deal-img-wrapper">
+          <img src="images/samsung.jpg" alt="Deal">
+        </div>
+        <div class="d-flex align-items-center mb-1">
+          <span class="discount-badge me-2">Up to 24% off</span>
+          <span class="deal-text">Deal of the Day</span>
+        </div>
+        <div class="deal-desc">Samsung Galaxy Smartphones</div>
+      </div>
+
+      <div class="deal-card">
+        <div class="deal-img-wrapper">
+          <img src="images/hub.jpg" alt="Deal">
+        </div>
+        <div class="d-flex align-items-center mb-1">
+          <span class="discount-badge me-2">60% off</span>
+          <span class="deal-text">Limited Time Deal</span>
+        </div>
+        <div class="deal-desc">Sony Noise Cancelling Headphones</div>
+      </div>
+
+      <div class="deal-card">
+        <div class="deal-img-wrapper">
+          <img src="images/tab.jpg" alt="Deal">
+        </div>
+        <div class="d-flex align-items-center mb-1">
+          <span class="discount-badge me-2">Up to 40% off</span>
+          <span class="deal-text">Deal of the Day</span>
+        </div>
+        <div class="deal-desc">Top Smartwatches from Apple & Samsung</div>
+      </div>
+
+      <div class="deal-card">
+        <div class="deal-img-wrapper">
+          <img src="images/laptop.jpg" alt="Deal">
+        </div>
+        <div class="d-flex align-items-center mb-1">
+          <span class="discount-badge me-2">15% off</span>
+          <span class="deal-text">Deal of the Day</span>
+        </div>
+        <div class="deal-desc">High Performance Gaming Laptops</div>
+      </div>
+
+      <div class="deal-card">
+        <div class="deal-img-wrapper">
+          <img src="images/bag.jpg" alt="Deal">
+        </div>
+        <div class="d-flex align-items-center mb-1">
+          <span class="discount-badge me-2">Min. 50% off</span>
+          <span class="deal-text">Deal of the Day</span>
+        </div>
+        <div class="deal-desc">Puma & Adidas Footwear</div>
+      </div>
+
+      <div class="deal-card">
+        <div class="deal-img-wrapper">
+          <img src="images/television.jpg" alt="Deal">
+        </div>
+        <div class="d-flex align-items-center mb-1">
+          <span class="discount-badge me-2">35% off</span>
+          <span class="deal-text">Limited Time Deal</span>
+        </div>
+        <div class="deal-desc">LG Ultrawide Monitors</div>
+      </div>
+
+      <div class="deal-card">
+        <div class="deal-img-wrapper">
+          <img src="images/mouse.jpg" alt="Deal">
+        </div>
+        <div class="d-flex align-items-center mb-1">
+          <span class="discount-badge me-2">Up to 30% off</span>
+          <span class="deal-text">Deal of the Day</span>
+        </div>
+        <div class="deal-desc">Mirrorless Cameras & Lenses</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid px-4 mb-5">
+  <div class="bg-white p-4">
+    <h4 class="fw-bold mb-4">Recommended Tech Upgrades</h4>
+    <div class="row g-4" id="dynamic-products-container">
+      
+    </div>
+  </div>
+</div>
+
+ <div class="d-grid">
+  <button type="button" class="btn btn-dark py-3 btn-block rounded-0" onclick="window.scrollTo(0, 0);">Back to top</button>
+</div>
+
+<!-- Footer starts -->
+ <footer class="bg-amazon-sub pt-5 pb-4">
+  <div class="container w-75"> 
+    
+    <div class="row">
+      
+      <div class="col-md-3 col-sm-6 mb-4">
+        <div class="footer-heading">Get to Know Us</div>
+        <ul class="list-unstyled">
+          <li><a href="#" class="footer-link">About Amazon</a></li>
+          <li><a href="#" class="footer-link">Careers</a></li>
+          <li><a href="#" class="footer-link">Press Releases</a></li>
+          <li><a href="#" class="footer-link">Amazon Science</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-3 col-sm-6 mb-4">
+        <div class="footer-heading">Connect with Us</div>
+        <ul class="list-unstyled">
+          <li><a href="#" class="footer-link">Facebook</a></li>
+          <li><a href="#" class="footer-link">Twitter</a></li>
+          <li><a href="#" class="footer-link">Instagram</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-3 col-sm-6 mb-4">
+        <div class="footer-heading">Make Money with Us</div>
+        <ul class="list-unstyled">
+          <li><a href="#" class="footer-link">Sell on Amazon</a></li>
+          <li><a href="#" class="footer-link">Sell under Amazon Accelerator</a></li>
+          <li><a href="#" class="footer-link">Protect and Build Your Brand</a></li>
+          <li><a href="#" class="footer-link">Amazon Global Selling</a></li>
+          <li><a href="#" class="footer-link">Supply to Amazon</a></li>
+          <li><a href="#" class="footer-link">Become an Affiliate</a></li>
+          <li><a href="#" class="footer-link">Fulfilment by Amazon</a></li>
+          <li><a href="#" class="footer-link">Advertise Your Products</a></li>
+          <li><a href="#" class="footer-link">Amazon Pay on Merchants</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-3 col-sm-6 mb-4">
+        <div class="footer-heading">Let Us Help You</div>
+        <ul class="list-unstyled">
+          <li><a href="#" class="footer-link">Your Account</a></li>
+          <li><a href="#" class="footer-link">Returns Centre</a></li>
+          <li><a href="#" class="footer-link">Recalls and Product Safety Alerts</a></li>
+          <li><a href="#" class="footer-link">100% Purchase Protection</a></li>
+          <li><a href="#" class="footer-link">Amazon App Download</a></li>
+          <li><a href="#" class="footer-link">Help</a></li>
+        </ul>
+      </div>
+      
+    </div>
+
+    <div class="footer-line"></div>
+
+    <div class="d-flex justify-content-center align-items-center gap-4">
+      
+      <a href="index.html" class="mt-1">
+        <img src="images/transparent-logo.png" alt="Amazon" width="100">
+      </a>
+      
+      <button class="footer-btn">
+        <i class="bi bi-globe"></i> English <i class="bi bi-chevron-expand" style="font-size: 0.7rem;"></i>
+      </button>
+      
+      <button class="footer-btn">
+         🇮🇳 India
+      </button> 
+    </div>
+  </div>
+</footer>
+<!-- Footer Ends -->
+
+ <!-- Secondary Footer Starts -->
+  <div class="bg-amazon pt-5 pb-4">
+  <div class="container w-75">
+    
+    <div class="row mb-5">
+      
+      <div class="col-md-3 col-sm-6">
+        <a href="#" class="footer-bottom-item">
+          <span class="footer-bottom-title">AbeBooks</span>
+          <span class="footer-bottom-desc">Books, art<br>& collectibles</span>
+        </a>
+        <a href="#" class="footer-bottom-item">
+          <span class="footer-bottom-title">Shopbop</span>
+          <span class="footer-bottom-desc">Designer<br>Fashion Brands</span>
+        </a>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <a href="#" class="footer-bottom-item">
+          <span class="footer-bottom-title">Amazon Web Services</span>
+          <span class="footer-bottom-desc">Scalable Cloud<br>Computing Services</span>
+        </a>
+        <a href="#" class="footer-bottom-item">
+          <span class="footer-bottom-title">Amazon Business</span>
+          <span class="footer-bottom-desc">Everything For<br>Your Business</span>
+        </a>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <a href="#" class="footer-bottom-item">
+          <span class="footer-bottom-title">Audible</span>
+          <span class="footer-bottom-desc">Download<br>Audio Books</span>
+        </a>
+        <a href="#" class="footer-bottom-item">
+          <span class="footer-bottom-title">Amazon Prime Music</span>
+          <span class="footer-bottom-desc">100 million songs, ad-free<br>Over 15 million podcast episodes</span>
+        </a>
+      </div>
+
+      <div class="col-md-3 col-sm-6">
+        <a href="#" class="footer-bottom-item">
+          <span class="footer-bottom-title">IMDb</span>
+          <span class="footer-bottom-desc">Movies, TV<br>& Celebrities</span>
+        </a>
+      </div>
+
+    </div>
+
+    <div class="d-flex flex-column align-items-center mt-4">
+      <div class="mb-1">
+        <a href="#" class="copyright-link me-3">Conditions of Use & Sale</a>
+        <a href="#" class="copyright-link me-3">Privacy Notice</a>
+        <a href="#" class="copyright-link">Interest-Based Ads</a>
+      </div>
+      <span class="copyright-text">© 2026, Retroashu.com, Created with &hearts;</span>
+    </div>
+
+  </div>
+</div>
+  <!-- Secondary Footer Ends -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

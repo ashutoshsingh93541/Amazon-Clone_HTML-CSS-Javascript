@@ -1,0 +1,481 @@
+/* --- Main Page Background --- */
+body {
+  /* This is the light gray color the banners will fade into */
+  background-color: #eaeded; 
+}
+
+/* Secondary Navbar Background */
+.bg-amazon-sub { 
+  background-color: #232f3e; 
+}
+
+/* Sub-nav Links Styling */
+.sub-nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 0.85rem;
+  padding: 5px 8px;
+  border: 1px solid transparent;
+  white-space: nowrap; /* Prevents text from breaking onto two lines */
+}
+
+.sub-nav-link:hover {
+  border: 1px solid white;
+  border-radius: 2px;
+}
+
+/* Custom Rufus Pill */
+.rufus-btn {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  font-size: 0.85rem;
+  text-decoration: none;
+  padding: 3px 10px;
+}
+
+/* --- Hero Carousel Styles --- */
+.hero-carousel-container {
+  position: relative;
+  /* Used to position the navigation arrows relative to this container */
+}
+
+/* The trick for the "fade from bottom" effect */
+.hero-carousel-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%; /* The fade starts from halfway down the image */
+  /* A smooth gradient from transparent to the page background color */
+  background: linear-gradient(to bottom, transparent 0%, #eaeded 100%);
+  pointer-events: none; /* Ensures clicks go through to the image/links below */
+}
+
+/* Force images to be a consistent height and cover the space */
+.hero-carousel-img {
+  width: 100%;
+  height: 600px; /* You can adjust this height based on your preference */
+  object-fit: cover; /* Ensures the image covers the area without stretching */
+  object-position: center top; /* Focuses on the top-center part of the banner */
+}
+
+/* --- Styling the Navigation Arrows --- */
+.hero-carousel-control {
+  height: 250px; /* Make the clickable area tall */
+  top: 0; /* Align to the top of the carousel */
+  width: 60px; /* Make them wider */ 
+}
+
+/* Style the actual arrow icons */
+.hero-carousel-control .carousel-control-prev-icon,
+.hero-carousel-control .carousel-control-next-icon {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* ========================================== */
+/* BACK TO TOP BUTTON                         */
+/* ========================================== */
+.back-to-top {
+  background-color: #364659; /* Amazon's specific slate gray */
+  color: white;
+  font-size: 0.85rem;
+  border: none;
+  transition: background-color 0.2s; /* Smooth hover effect */
+}
+
+.back-to-top:hover {
+  background-color: #485769; /* Slightly lighter on hover */
+  color: white;
+}
+
+/* ========================================== */
+/* PRODUCT CARD GRID SECTION                  */
+/* ========================================== */
+
+/* The main container that pulls the cards up */
+.product-cards-overlay {
+  position: relative;
+  z-index: 10; /* Ensures it sits on top of the carousel */
+  /* This negative margin pulls the entire section up. 
+     Adjust this value if your carousel height is different. */
+  margin-top: -350px; 
+  padding-bottom: 40px; /* Adds space below before the footer starts */
+}
+
+/* Ensures all cards in a row are the same height */
+.product-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Styling for the small text below product images */
+.product-text {
+  font-size: 0.75rem;
+  line-height: 1.2;
+  margin-bottom: 0;
+  color: #333;
+  display: block; /* Ensures it sits below the image */
+}
+
+/* The "See more" link at the bottom of cards */
+.card-link {
+  text-decoration: none;
+  font-size: 0.85rem;
+  color: #007185; /* Amazon's link color */
+  margin-top: auto; /* Pushes the link to the bottom of the card */
+  padding-top: 1rem;
+}
+
+.card-link:hover {
+  text-decoration: underline;
+  color: #c7511f;
+}
+
+/* Add this to force consistent heights on the grid images */
+.product-card .row-cols-2 img {
+  height: 110px;
+  width: 100%;
+  object-fit: cover; /* Prevents the image from squishing */
+}
+
+/* ========================================== */
+/* TODAY'S DEALS SCROLLING SECTION            */
+/* ========================================== */
+
+.deals-container {
+  background-color: white;
+  padding: 20px;
+  /* Adds space between this block and the grid cards above */
+  margin-top: 10px; 
+}
+
+/* The horizontal scrolling track */
+.deals-scroll-row {
+  display: flex;
+  overflow-x: auto; /* Enables horizontal scrolling */
+  gap: 20px; /* Space between each item */
+  padding-bottom: 15px; /* Room for the scrollbar */
+  scrollbar-width: thin; /* Makes scrollbar thinner on Firefox */
+}
+
+/* Styling the scrollbar for Chrome/Safari/Edge */
+.deals-scroll-row::-webkit-scrollbar {
+  height: 8px;
+}
+.deals-scroll-row::-webkit-scrollbar-thumb {
+  background-color: #d5d9d9;
+  border-radius: 4px;
+}
+
+/* Individual Deal Card */
+.deal-card {
+  min-width: 200px;
+  max-width: 200px;
+  flex-shrink: 0; /* Prevents cards from shrinking to fit the screen */
+  cursor: pointer;
+}
+
+.deal-img-wrapper {
+  background-color: #f8f8f8;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.deal-img-wrapper img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain; /* Keeps the whole product visible */
+}
+
+/* Amazon's red deal badge */
+.discount-badge {
+  background-color: #CC0C39; 
+  color: white;
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  border-radius: 2px;
+  font-weight: bold;
+}
+
+.deal-text {
+  font-size: 0.75rem;
+  color: #CC0C39;
+  font-weight: bold;
+}
+
+.deal-desc {
+  font-size: 0.85rem;
+  color: #0F1111;
+  white-space: nowrap; /* Keeps text on one line */
+  overflow: hidden; /* Hides text that overflows */
+  text-overflow: ellipsis; /* Adds the "..." at the end */
+}
+
+/* ========================================== */
+/* FOOTER STYLES                              */
+/* ========================================== */
+/* Background for secondary nav and footer */
+.bg-amazon-sub { 
+  background-color: #232f3e; 
+}
+
+.footer-link {
+  color: #DDDDDD; 
+  text-decoration: none;
+  font-size: 0.85rem;
+  line-height: 2; /* Gives the links some breathing room */
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+  color: #DDDDDD; 
+}
+
+.footer-heading {
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+/* The divider line above the logo */
+.footer-line {
+  border-top: 1px solid #3a4553;
+  margin: 40px 0;
+}
+
+/* Bottom language & country buttons */
+.footer-btn {
+  background-color: transparent;
+  color: #CCCCCC;
+  border: 1px solid #848688;
+  padding: 6px 18px;
+  border-radius: 2px;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Spacing between icon and text */
+}
+
+.footer-btn:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ========================================== */
+/* BOTTOM FOOTER STYLES                       */
+/* ========================================== */
+.footer-bottom-item {
+  text-decoration: none;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.footer-bottom-item:hover {
+  text-decoration: underline;
+  text-decoration-color: white;
+}
+
+.footer-bottom-title {
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: block;
+}
+
+.footer-bottom-desc {
+  color: #999999; /* A slightly darker gray than the main footer links */
+  font-size: 0.7rem;
+  line-height: 1.2;
+  display: block;
+}
+
+.copyright-link {
+  color: #DDDDDD;
+  text-decoration: none;
+  font-size: 0.75rem;
+}
+
+.copyright-link:hover {
+  text-decoration: underline;
+}
+
+.copyright-text {
+  color: #DDDDDD;
+  font-size: 0.75rem;
+}
+
+/* ========================================== */
+/* HOVER EFFECTS                              */
+/* ========================================== */
+
+/* 1. Add smooth transition settings to the base cards */
+.product-card, 
+.deal-card {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  border-radius: 4px; /* Softens the edges just a tiny bit */
+}
+
+/* 2. The actual hover state: Add shadow and a microscopic lift */
+.product-card:hover, 
+.deal-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* A soft, wide shadow */
+  transform: translateY(-2px); /* Lifts the card up by 2 pixels */
+}
+
+/* 1. Make sure the container hides any zooming so it doesn't break the layout */
+.product-card .col a, 
+.deal-img-wrapper {
+  display: block;
+  overflow: hidden; 
+}
+
+/* 2. Add transition to the images themselves */
+.product-card .col img, 
+.deal-img-wrapper img {
+  transition: transform 0.3s ease;
+}
+
+/* 3. The hover state: scale the image up by 5% */
+.product-card .col:hover img, 
+.deal-card:hover .deal-img-wrapper img {
+  transform: scale(1.05);
+}
+
+/* ========================================== */
+/* MOBILE & TABLET RESPONSIVENESS             */
+/* ========================================== */
+
+@media (max-width: 768px) {
+  /* 1. Make the hero banner shorter on mobile */
+  .hero-carousel-img {
+    height: 300px; 
+  }
+  
+  /* 2. Adjust the negative margin so it doesn't overlap the navbar */
+  .product-cards-overlay {
+    margin-top: -100px; 
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  /* 3. Slightly reduce the height of the 2x2 grid images */
+  .product-card .row-cols-2 img {
+    height: 90px; 
+  }
+
+  /* 4. Hide the giant navigation arrows on the slider for mobile */
+  .hero-carousel-control {
+    display: none; 
+  }
+}
+
+/* ========================================== */
+/* SIGN IN PAGE STYLES                        */
+/* ========================================== */
+
+/* The primary yellow Continue button */
+.btn-amazon {
+  background-color: #ffd814;
+  border: 1px solid #fcd200;
+  color: #0f1111;
+  font-size: 13px;
+}
+
+.btn-amazon:hover {
+  background-color: #f7ca00;
+  border-color: #f2c200;
+}
+
+/* The secondary gray Create Account button */
+.btn-amazon-light {
+  background-color: #ffffff;
+  border: 1px solid #d5d9d9;
+  color: #0f1111;
+  font-size: 13px;
+}
+
+.btn-amazon-light:hover {
+  background-color: #f7f8f8;
+}
+
+/* Form input styling to match Amazon's focus ring */
+.form-control:focus {
+  border-color: #007185;
+  box-shadow: 0 0 0 3px rgba(0, 113, 133, 0.3);
+}
+
+/* ========================================== */
+/* CART PAGE STYLES                           */
+/* ========================================== */
+
+.cart-action-link {
+  color: #007185;
+}
+
+.cart-action-link:hover {
+  color: #c7511f;
+  text-decoration: underline;
+}
+
+/* Make sure the form select looks like an Amazon dropdown */
+.form-select-sm {
+  background-color: #f0f2f2;
+  border-color: #d5d9d9;
+  box-shadow: 0 2px 5px rgba(15,17,17,.15);
+}
+
+.form-select-sm:hover {
+  background-color: #e3e6e6;
+  cursor: pointer;
+}
+
+/* ========================================== */
+/* PRODUCT DETAILS PAGE (PDP)                 */
+/* ========================================== */
+
+/* The Buy Now button is more orange than the Add to Cart yellow */
+.btn-amazon-orange {
+  background-color: #ffa41c;
+  border: 1px solid #ff8f00;
+  color: #0f1111;
+}
+
+.btn-amazon-orange:hover {
+  background-color: #fa8900;
+}
+
+/* Thumbnail hover effect */
+.thumbnail-hover {
+  transition: border-color 0.2s;
+}
+
+.thumbnail-hover:hover {
+  border-color: #007185 !important;
+  box-shadow: 0 0 5px rgba(0, 113, 133, 0.5);
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.product-bullets {
+  padding-left: 1.2rem;
+}
+
+/* Product Title Link Hover */
+.product-title-link {
+  color: #0f1111; /* Default Amazon black */
+}
+
+.product-title-link:hover {
+  color: #c7511f; /* Amazon orange on hover */
+}
