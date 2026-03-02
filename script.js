@@ -3,7 +3,7 @@ const products = [
   {
     id: 1,
     title: "AMD Ryzen 5 5600F Desktop Processor",
-    image: "images/ryzen.jpg",
+    image: "images/ryzen.png", // Changed to .png
     price: "₹12,499",
     rating: "⭐⭐⭐⭐⭐",
     delivery: "Get it by Tomorrow"
@@ -11,7 +11,7 @@ const products = [
   {
     id: 2,
     title: "Nvidia RTX 5050 Graphics Card - 8GB GDDR6",
-    image: "images/5050.jfif",
+    image: "images/graphics.webp", // Changed to .png
     price: "₹28,999",
     rating: "⭐⭐⭐⭐½",
     delivery: "Free Delivery by Amazon"
@@ -19,7 +19,7 @@ const products = [
   {
     id: 3,
     title: "Corsair Vengeance 32GB (2x16GB) DDR5 RAM",
-    image: "images/ram.jpg",
+    image: "images/ram.png", // Changed to .png
     price: "₹9,299",
     rating: "⭐⭐⭐⭐⭐",
     delivery: "Get it by Tomorrow"
@@ -27,7 +27,7 @@ const products = [
   {
     id: 4,
     title: "Crucial P3 1TB PCIe NVMe M.2 SSD",
-    image: "images/ssd.jfif",
+    image: "images/ssd.png", // Changed to .png
     price: "₹5,499",
     rating: "⭐⭐⭐⭐",
     delivery: "Free Delivery by Amazon"
@@ -140,4 +140,5 @@ if (productContainer) {
 }
 
 // Run once on load
+
 updateCartUI();
